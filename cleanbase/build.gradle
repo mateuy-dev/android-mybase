@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 ext {
     PUBLISH_GROUP_ID = 'com.mateuyabar'
     PUBLISH_ARTIFACT_ID = 'my-android-base'
-    PUBLISH_VERSION = '0.0.1'
+    PUBLISH_VERSION = '0.0.2'
 }
 
 
@@ -39,7 +39,7 @@ android {
         minSdkVersion 9
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
+        versionName "0.0.2"
     }
     buildTypes {
         release {
