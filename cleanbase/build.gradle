@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+
+ext {
+    PUBLISH_GROUP_ID = 'com.mateuyabar'
+    PUBLISH_ARTIFACT_ID = 'my-android-base'
+    PUBLISH_VERSION = '0.0.1'
+}
+
+
+/*ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'my-android-base'
+
+    publishedGroupId = 'com.mateuyabar'
+    libraryName = 'my-android-base'
+    artifact = 'my-android-base'
+
+    libraryDescription = '...'
+
+    siteUrl = 'https://github.com/mateuyabar/android-mybase'
+    gitUrl = 'https://github.com/nuuneoi/android-mybase.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'mateuyabar'
+    developerName = 'Mateu Yabar'
+    developerEmail = 'mateuyabar@mateuyabar.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}*/
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.0"
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.0.0'
+}
+
+//http://inthecheesefactory.com/blog/how-to-upload-library-to-jcenter-maven-central-as-dependency/en
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+
+//https://medium.com/@tigr/how-to-publish-your-android-studio-library-to-jcenter-5384172c4739
+apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
