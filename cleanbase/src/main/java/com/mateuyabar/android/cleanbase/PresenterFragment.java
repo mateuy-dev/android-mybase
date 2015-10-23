@@ -2,56 +2,54 @@ package com.mateuyabar.android.cleanbase;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 
 /**
- * Base Activity that has one Component (a Presenter).
+ * Base Fragment that has one Component (a Presenter).
  */
-public abstract class PresenterActivity extends AppCompatActivity implements PresenterView{
+public abstract class PresenterFragment extends Fragment implements PresenterView{
+    protected boolean acceptsComponent(Component component) {
+        return !(component instanceof ActivityComponent);
+    }
+
     @Override
-    protected void onPause() {
+    public void onCreate(Bundle savedInstanceState) {
+        if(!acceptsComponent(getPresenter()))
+            throw new UnsupportedOperationException("Presenter "+getPresenter().getClass()+" not supported in fragment "+getClass());
+        getPresenter().onCreate();
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onPause() {
         getPresenter().onPause();
         super.onPause();
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        getPresenter().onCreate();
-        super.onCreate(savedInstanceState);
-    }
-
-
-
-    @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
         getPresenter().onStart();
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         getPresenter().onResume();
     }
 
     @Override
-    protected void onStop() {
+    public void onStop() {
         getPresenter().onStop();
         super.onStop();
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         getPresenter().onDestroy();
         super.onDestroy();
     }
 
-    @Override
-    public void onNewIntent(Intent intent) {
-        if(getPresenter() instanceof ActivityComponent)
-            ((ActivityComponent)getPresenter()).onNewIntent(intent);
-        super.onNewIntent(intent);
-    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

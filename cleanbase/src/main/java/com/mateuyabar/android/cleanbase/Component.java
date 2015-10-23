@@ -1,7 +1,10 @@
 package com.mateuyabar.android.cleanbase;
 
-import android.content.Context;
+import android.content.Intent;
 
+/**
+ * Component that responds to Activity life cycle
+ */
 public interface Component {
     void onStart();
     void onResume();
@@ -9,4 +12,5 @@ public interface Component {
     void onDestroy();
     void onPause();
     void onCreate();
+    void onActivityResult(int requestCode, int resultCode, Intent data);
 }
