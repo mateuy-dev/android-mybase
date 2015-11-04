@@ -1,1 +1,1 @@
-include ':app', ':cleanbase'
+include ':app', ':cleanbase', ':componentslibrary'

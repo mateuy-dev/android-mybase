@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 ext {
     PUBLISH_GROUP_ID = 'com.mateuyabar'
     PUBLISH_ARTIFACT_ID = 'my-android-base'
-    PUBLISH_VERSION = '0.0.3'
+    PUBLISH_VERSION = '0.0.4'
 }
 
 
@@ -39,7 +39,7 @@ android {
         minSdkVersion 9
         targetSdkVersion 23
         versionCode 1
-        versionName "0.0.3"
+        versionName "0.0.4"
     }
     buildTypes {
         release {
@@ -60,4 +60,5 @@ dependencies {
 //apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
 
 //https://medium.com/@tigr/how-to-publish-your-android-studio-library-to-jcenter-5384172c4739
+// ./gradlew clean build generateRelease
 apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
