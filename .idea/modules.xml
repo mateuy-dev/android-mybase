@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/CleanBaseLib.iml" filepath="$PROJECT_DIR$/CleanBaseLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/cleanbase/cleanbase.iml" filepath="$PROJECT_DIR$/cleanbase/cleanbase.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cleanbase/cleanbase.iml" filepath="$PROJECT_DIR$/cleanbase/cleanbase.iml" />
       <module fileurl="file://$PROJECT_DIR$/componentslibrary/componentslibrary.iml" filepath="$PROJECT_DIR$/componentslibrary/componentslibrary.iml" />
     </modules>
   </component>
